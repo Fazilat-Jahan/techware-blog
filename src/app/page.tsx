@@ -21,13 +21,13 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Image
+      {/* <Image
         src="/background.jpg"
         alt="Blog background"
         layout="fill"
         objectFit="cover"
         className="absolute top-0 left-0 z-0 opacity-50"
-      />
+      /> */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-0">
@@ -37,7 +37,7 @@ export default function HomePage() {
 </h1> */}
 
 <h1
-      className="text-2xl sm:text-3xl md:text-4xl font-extrabold italic capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4"
+      className="text-3xl sm:text-4xl md:text-4xl font-extrabold italic text-center capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4"
       style={{
         backgroundImage: 'url("/background.jpg")',
         backgroundSize: "fill",

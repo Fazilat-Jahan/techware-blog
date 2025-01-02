@@ -22,11 +22,11 @@ export default function Header() {
               TechWare
             </Link> */}
             <Link href="/" className="inline-block">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold italic text-transparent bg-clip-text"
+              <h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold italic text-transparent bg-clip-text"
                 style={{
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent", 
-                  WebkitTextStroke: "1px white",
+                  WebkitTextStroke: "0.5px white",
 
                 }}
               >
