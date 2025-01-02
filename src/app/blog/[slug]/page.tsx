@@ -3,8 +3,16 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { blogs } from '../../data/blog';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from "@/app/components/Header/page";
 import Footer from "@/app/components/Footer/page";
+
+interface Comment {
+  id: number;
+  author: string;
+  content: string;
+  createdAt: string;
+}
 
 interface Blog {
   title: string;
@@ -35,6 +43,8 @@ interface Blog {
 export default function BlogPostPage() {
   const params = useParams();
   const [blog, setBlog] = useState<Blog | null>(null);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [newComment, setNewComment] = useState({ author: '', content: '' });
 
   useEffect(() => {
     const slug = params.slug as string;
@@ -45,6 +55,20 @@ export default function BlogPostPage() {
       setBlog(null);
     }
   }, [params.slug]);
+
+  const handleCommentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newComment.author && newComment.content) {
+      const comment: Comment = {
+        id: Date.now(),
+        author: newComment.author,
+        content: newComment.content,
+        createdAt: new Date().toISOString(),
+      };
+      setComments([...comments, comment]);
+      setNewComment({ author: '', content: '' });
+    }
+  };
 
   if (!blog) {
     return (
@@ -61,16 +85,16 @@ export default function BlogPostPage() {
       <Header />
       <main className="flex-grow p-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-        <div className='md:flex md:flex-row items-center justify-center'>
-        <div className="text-base font-medium mb-4 md:w-3/5 text-justify md:p-6">{blog.content}</div>
+        
+        <div className="text-base font-medium mb-4  text-justify ">{blog.content}</div>
         <Image
           src={blog.imageUrl}
           alt={blog.title}
-          className="w-1/2 h-1/2 object-cover rounded-lg mb-6"
+          className="md:w-1/2 md:h-1/2 w-full h-full object-cover rounded-lg mb-6"
           width={800}
           height={300} 
         />
-        </div>
+      
 
         {/* Dynamic headings */}
         {Array.from({ length: 9 }, (_, index) => {
@@ -79,13 +103,51 @@ export default function BlogPostPage() {
           return blog[heading] && blog[content] ? (
             <div key={index}>
               <h2 className="text-2xl font-bold mb-2">{blog[heading]}</h2>
-              <div className="text-base font-medium mb-4">{blog[content]}</div>
+              <div className="text-base font-medium mb-4 text-justify">{blog[content]}</div>
             </div>
           ) : null;
         })}
 
         {/* Conclusion */}
-        <div className="text-base font-medium mt-6">{blog.conclusion}</div>
+        <div className="text-base font-medium mt-6 mb-8">{blog.conclusion}</div>
+
+        {/* Comments Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-4">Post a Comment</h2>
+          {comments.map((comment) => (
+            <div key={comment.id} className="mb-4 p-4 bg-gray-100 rounded-lg">
+              <p className="font-bold">{comment.author}</p>
+              <p>{comment.content}</p>
+              <p className="text-sm text-gray-500 mt-2">
+                {new Date(comment.createdAt).toLocaleString()}
+              </p>
+            </div>
+          ))}
+          <form onSubmit={handleCommentSubmit} className="mt-6">
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={newComment.author}
+              onChange={(e) => setNewComment({ ...newComment, author: e.target.value })}
+              className="w-full p-2 mb-2 border rounded"
+              required
+            />
+            <textarea
+              placeholder="Your Comment"
+              value={newComment.content}
+              onChange={(e) => setNewComment({ ...newComment, content: e.target.value })}
+              className="w-full p-2 mb-2 border rounded"
+              rows={4}
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition-colors"
+            >
+              Submit Comment
+            </button>
+          </form>
+        </div>
       </main>
       <Footer />
     </div>

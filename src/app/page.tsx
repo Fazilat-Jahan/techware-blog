@@ -20,7 +20,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen relative ">
+    <div className="flex flex-col min-h-screen relative">
       <Image
         src="/background.jpg"
         alt="Blog background"
@@ -30,17 +30,31 @@ export default function HomePage() {
       />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow flex flex-col items-center justify-center ">
-          <h1 className="text-4xl font-bold italic underline  mb-4 text-sky-900 text-center">
-            Welcome to the Techware Blog
-          </h1>
+        <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-0">
+        {/* <h1
+  className="text-2xl sm:text-3xl md:text-4xl font-bold italic underline mb-6 sm:mb-8 lg:mb-4 text-center">
+  Welcome to the Techware Blog
+</h1> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl mb-2">
+<h1
+      className="text-2xl sm:text-3xl md:text-4xl font-extrabold italic capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4"
+      style={{
+        backgroundImage: 'url("/background.jpg")',
+        backgroundSize: "fill",
+        backgroundPosition: "center",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        WebkitTextStroke: "1.5px white",
+      }}
+    >
+       Welcome to the Techware Blog
+    </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-5xl mb-6 sm:mb-4">
             {displayedBlogs.map((blog) => (
               <Link
                 key={blog.slug}
                 href={`/blog/${blog.slug}`}
-                className="bg-white bg-opacity-80 rounded-lg shadow-lg overflow-hidden block" // Ensures proper styling as a block
+                className="bg-white bg-opacity-80 rounded-lg shadow-lg overflow-hidden block transition-transform duration-300 hover:scale-105"
               >
                 <div>
                   <Image
@@ -48,10 +62,10 @@ export default function HomePage() {
                     alt={blog.title}
                     width={800}
                     height={300}
-                    className="w-full h-48 object-fill"
+                    className="w-full h-40 sm:h-48 object-fill"
                   />
                   <div className="p-4">
-                    <h2 className="text-xl font-semibold text-gray-800">
+                    <h2 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2">
                       {blog.title}
                     </h2>
                     <span className="text-cyan-600 hover:text-cyan-800 font-medium underline">
@@ -63,10 +77,9 @@ export default function HomePage() {
             ))}
           </div>
 
-
           <button
             onClick={toggleBlogs}
-            className="bg-cyan-500 font-bold text-white py-2 px-6 mt-2 hover:bg-cyan-600 transition duration-300"
+            className="bg-gradient-to-r from-slate-900 to-cyan-500 font-bold text-white py-2 px-4 sm:px-6 rounded-md hover:bg-cyan-600 transition duration-300 text-sm sm:text-base md:mb-4 mb-2 shadow-lg"
           >
             {showAllBlogs ? 'Show Less' : 'More Blogs'}
           </button>

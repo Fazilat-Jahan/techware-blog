@@ -34,31 +34,36 @@ const CategoryPage = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow p-8 max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 capitalize">{category} Blogs</h1>
+        <h1 className="text-lg font-bold underline mb-8 capitalize text-gray-500"><Link href={"/"}><span>Home/ </span></Link> {category} Blogs</h1>
         {filteredBlogs.length === 0 ? (
           <p>No blogs found for this category.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBlogs.map((blog) => (
-              <div key={blog.slug} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <Image
-                  src={blog.imageUrl}
-                  alt={blog.title}
-                  width={800}
-                  height={300}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
-                  <p className="text-gray-600 mb-4">{blog.content.substring(0, 100)}...</p>
-                  <Link
-                    href={`/blog/${blog.slug}`}
-                    className="text-cyan-600 hover:text-cyan-800 font-medium"
-                  >
-                    Read More
-                  </Link>
+              <Link
+                key={blog.slug}
+                href={`/blog/${blog.slug}`}
+                className="bg-white bg-opacity-80  rounded-lg shadow-lg overflow-hidden block" // Ensures proper styling as a block
+              >
+                <div>
+                  <Image
+                    src={blog.imageUrl}
+                    alt={blog.title}
+                    width={800}
+                    height={300}
+                    className="w-full h-48 object-fill"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold mb-2">
+                      {blog.title}
+                    </h2>
+                    <p className="text-gray-600 mb-4">{blog.content.substring(0, 100)}...</p>
+                    <span className="text-cyan-600 hover:text-cyan-800 font-medium underline">
+                      Read More
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
