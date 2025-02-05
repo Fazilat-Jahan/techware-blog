@@ -76,7 +76,7 @@ export default function Header() {
           </nav>
         )}
       </header>
-      <div className="pt-24"></div>
+      <div className="md:pt-24 pt-14"></div>
     </>
   );
 }
