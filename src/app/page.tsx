@@ -48,7 +48,7 @@ export default function HomePage() {
           // }}
           >
             {/* Welcome to the Techware Blog <br /> */}
-            Where The Tech <span className="text-cyan-600">Meets</span> Curiosity<br />
+            Where The Tech <br className="md:hidden"/> <span className="text-cyan-600">Meets</span> Curiosity<br />
           </h1>
           <h2 className="flex justify-center items-center w-full px-1.5 md:p-0 md:w-3/5 text-lg font-bold italic text-center capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4 text-gray-700">
             Discover insights, trends, and innovations shaping the world of tech.
