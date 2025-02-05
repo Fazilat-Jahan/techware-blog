@@ -31,24 +31,30 @@ export default function HomePage() {
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-0">
-        {/* <h1
+          {/* <h1
   className="text-2xl sm:text-3xl md:text-4xl font-bold italic underline mb-6 sm:mb-8 lg:mb-4 text-center">
   Welcome to the Techware Blog
 </h1> */}
 
-<h1
-      className="text-3xl sm:text-4xl md:text-4xl font-extrabold italic text-center capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4"
-      style={{
-        backgroundImage: 'url("/background.jpg")',
-        backgroundSize: "fill",
-        backgroundPosition: "center",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        WebkitTextStroke: "1.5px white",
-      }}
-    >
-       Welcome to the Techware Blog
-    </h1>
+          <h1
+            className="text-3xl font-extrabold italic text-center capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4"
+          // style={{
+          //   backgroundImage: 'url("/background.jpg")',
+          //   backgroundSize: "fill",
+          //   backgroundPosition: "center",
+          //   WebkitBackgroundClip: "text",
+          //   WebkitTextFillColor: "transparent",
+          //   WebkitTextStroke: "1.5px white",
+          // }}
+          >
+            {/* Welcome to the Techware Blog <br /> */}
+            Where Tech <span className="text-cyan-600">Meets</span> Curiosity<br />
+          </h1>
+          <h2 className="flex justify-center items-center w-full px-2 md:p-0 md:w-3/5 text-lg font-bold italic text-center capitalize bg-clip-text mb-6 sm:mb-8 lg:mb-4 text-gray-700">
+            Discover insights, trends, and innovations shaping the world of tech.
+            Join TechWare Blog to stay informed and inspired.
+          </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-5xl mb-6 sm:mb-4">
             {displayedBlogs.map((blog) => (
               <Link
