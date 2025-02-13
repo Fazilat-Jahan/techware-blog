@@ -11,6 +11,7 @@ export const blogs = [
     heading2C: `Agentic AI takes a different approach by operating autonomously to achieve specific goals. It makes decisions, takes actions, and adapts to new information with minimal human intervention. For instance, in financial services, Agentic AI can autonomously execute tasks like transferring funds between accounts, streamlining operations and reducing the need for manual oversight..
 `,
     heading3: `Key Differences`,
+    heading3C: `Here’s how Agentic AI and Generative AI differ at their core.`,
     heading4: `Functionality:`,
     heading4C: `Generative AI creates content based on learned data patterns, while Agentic AI focuses on decision-making and autonomous action to achieve predefined objectives.`,
     heading5: `Autonomy:`,
@@ -217,6 +218,7 @@ way to build a client base, gain experience, and make money online with no costs
     heading2C: `Agentic AI takes a different approach by operating autonomously to achieve specific goals. It makes decisions, takes actions, and adapts to new information with minimal human intervention. For instance, in financial services, Agentic AI can autonomously execute tasks like transferring funds between accounts, streamlining operations and reducing the need for manual oversight..
 `,
     heading3: `Key Differences`,
+    heading3C: `Here’s how Agentic AI and Generative AI differ at their core.`,
     heading4: `Functionality:`,
     heading4C: `Generative AI creates content based on learned data patterns, while Agentic AI focuses on decision-making and autonomous action to achieve predefined objectives.`,
     heading5: `Autonomy:`,
