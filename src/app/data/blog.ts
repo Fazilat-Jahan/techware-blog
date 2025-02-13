@@ -1,5 +1,25 @@
 // data/blog.ts
-export const blogs = [
+export const blogs = [ 
+  {
+    title: 'Agentic AI vs Generative AI',
+    slug: 'agentic-ai-vs-generative-ai',
+    category: "trending",
+    content: `Artificial Intelligence (AI) is transforming our world, and two of its most intriguing branches are Generative AI and Agentic AI. Understanding their differences can help us appreciate their unique contributions to technology and society.`,
+    heading1: `Generative AI: The Creative Powerhouse`,
+    heading1C: `Generative AI focuses on creating content. It can produce text, images, music, and more by learning patterns from vast datasets. Tools like ChatGPT and DALL-E exemplify this, generating human-like text and images based on user prompts. This technology is widely used in content creation, design, and entertainment, offering innovative ways to generate new ideas and materials. `,
+    heading2: `Agentic AI: The Autonomous Achiever`,
+    heading2C: `Agentic AI takes a different approach by operating autonomously to achieve specific goals. It makes decisions, takes actions, and adapts to new information with minimal human intervention. For instance, in financial services, Agentic AI can autonomously execute tasks like transferring funds between accounts, streamlining operations and reducing the need for manual oversight..
+`,
+    heading3: `Key Differences`,
+    heading4: `Functionality:`,
+    heading4C: `Generative AI creates content based on learned data patterns, while Agentic AI focuses on decision-making and autonomous action to achieve predefined objectives.`,
+    heading5: `Autonomy:`,
+    heading5C: `Generative AI requires user prompts to generate content, whereas Agentic AI operates independently, making decisions and executing tasks without continuous human input.`,
+    heading6: `Applications: `,
+    heading6C: `Generative AI is ideal for tasks like writing articles, creating art, or composing music. Agentic AI is suited for applications such as autonomous vehicles, advanced customer support chatbots, and automated financial trading, where decision-making and adaptability are crucial.`,
+    conclusion: `While both Generative AI and Agentic AI are advancing rapidly, they serve different purposes. Generative AI enhances creativity by producing new content, whereas Agentic AI drives efficiency through autonomous decision-making and action. Recognizing these distinctions allows us to harness their unique strengths effectively.`,
+    imageUrl: '/Ag AI vs Gen AI.jpg',
+  },
   {
     title: 'AI Won’t Eat Your Job Until.',
     slug: 'ai-will-not-eat-your-job-until',
@@ -185,5 +205,27 @@ way to build a client base, gain experience, and make money online with no costs
     conclusion: `By 2024, Python, JavaScript/TypeScript, and SQL, dominate the programming landscape with their versatility, vital ecosystems, and continuous evolution to meet modern development needs. Whether developing dynamic web applications, diving into data science, or building robust backend systems, mastering these languages provides a solid foundation for a successful programming career. These languages ensure developers stay relevant and competitive in an industry where new trends emerge every day.`,
     imageUrl: '/top 3 languages.png',
   },
+
+  {
+    title: 'Agentic AI vs Generative AI',
+    slug: 'agentic-ai-vs-generative-ai',
+    category: "tech",
+    content: `Artificial Intelligence (AI) is transforming our world, and two of its most intriguing branches are Generative AI and Agentic AI. Understanding their differences can help us appreciate their unique contributions to technology and society.`,
+    heading1: `Generative AI: The Creative Powerhouse`,
+    heading1C: `Generative AI focuses on creating content. It can produce text, images, music, and more by learning patterns from vast datasets. Tools like ChatGPT and DALL-E exemplify this, generating human-like text and images based on user prompts. This technology is widely used in content creation, design, and entertainment, offering innovative ways to generate new ideas and materials. `,
+    heading2: `Agentic AI: The Autonomous Achiever`,
+    heading2C: `Agentic AI takes a different approach by operating autonomously to achieve specific goals. It makes decisions, takes actions, and adapts to new information with minimal human intervention. For instance, in financial services, Agentic AI can autonomously execute tasks like transferring funds between accounts, streamlining operations and reducing the need for manual oversight..
+`,
+    heading3: `Key Differences`,
+    heading4: `Functionality:`,
+    heading4C: `Generative AI creates content based on learned data patterns, while Agentic AI focuses on decision-making and autonomous action to achieve predefined objectives.`,
+    heading5: `Autonomy:`,
+    heading5C: `Generative AI requires user prompts to generate content, whereas Agentic AI operates independently, making decisions and executing tasks without continuous human input.`,
+    heading6: `Applications: `,
+    heading6C: `Generative AI is ideal for tasks like writing articles, creating art, or composing music. Agentic AI is suited for applications such as autonomous vehicles, advanced customer support chatbots, and automated financial trading, where decision-making and adaptability are crucial.`,
+    conclusion: `While both Generative AI and Agentic AI are advancing rapidly, they serve different purposes. Generative AI enhances creativity by producing new content, whereas Agentic AI drives efficiency through autonomous decision-making and action. Recognizing these distinctions allows us to harness their unique strengths effectively.`,
+    imageUrl: '/Ag AI vs Gen AI.jpg',
+  },
+  
 ];
 
